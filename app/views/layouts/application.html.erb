@@ -28,13 +28,13 @@
           <a><i class="fa fa-compass"></i></a>
           <a><i class="fa fa-heart"></i></a>
           <% if user_signed_in? %>
-            <a href="<%= user_path(current_user)%>" data-method="delete">
-              <i class="fa fa-user"></i>
-            </a>
+            <%= link_to "Logout", destroy_user_session_path, class: "btn btn-default" %> 
+             
+            
           <% else %>
-            <a href="<%= new_user_session_path%>">
-              <i class="fa fa-sign-in"></i>
-            </a>
+            <%= link_to "Login", new_user_session_path, class: "btn btn-default" %> 
+             
+            
           <% end %>
         </div>
       </div>
